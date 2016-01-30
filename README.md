@@ -1,2 +1,3 @@
-# PlayerStats
-A Stats For http://player.me
+| StreamStats |Description   |
+| ------------- |:------------
+| [PlayerStats](#)     | Stats For [Player.me](https://player.me) |
