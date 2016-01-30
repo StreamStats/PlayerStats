@@ -12,7 +12,7 @@ function getData(){
     $.get('https://player.me/api/v1/users/' + $('#inputText').val(), "", function(data){
          var avatar = "https://player.me/api/v1/users/" + data['id']['avatar'] + "/avatarId";
          var username = data['id']['username'];
-         var followers = data['numFollowers'];
+         var followers = data['followers'];
          if(data['type'] != null){
             var lastPlayed = data['type']['name'];
          }else{
