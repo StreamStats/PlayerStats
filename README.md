@@ -1,3 +1,3 @@
 | StreamStats |Description   |
 | ------------- |:------------
-| [PlayerStats](#)     | Stats For [Player.me](https://player.me) |
+| [PlayerStats](http://streamstats.github.io/PlayerStats)     | Stats For [Player.me](https://player.me) |
