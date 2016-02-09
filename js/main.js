@@ -9,8 +9,8 @@ $(document).ready(function(event){
    });
 });
 function getData(){
-    $.get('https://player.me/api/v1/users/' + $('#inputText').val(), "", function(data){
-         var avatar = "https://player.me/api/v1/users/" + data['id']['avatar'] + "/avatarId";
+    $.get('https://player.me/api/v1/users/?username=true' + $('#inputText').val(), "", function(data){
+         var avatar = "https://player.me/api/v1/users/?username=true" + data['id']['avatar'] + "/avatarId";
          var username = data['id']['username'];
          var followers = data['followers'];
          if(data['type'] != null){
