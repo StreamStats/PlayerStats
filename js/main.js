@@ -9,7 +9,7 @@ $(document).ready(function(event){
    });
 });
 function getData(){
-    $.get('https://player.me/api/v1/users/' + $('#inputText').val(), "?username=true", function(outer){
+    $.get('https://player.me/api/v1/users/' + $('#inputText').val(), "username=true", function(outer){
          var data = outer.results
          var avatar = "https://player.me/api/v1/users/" + data['id'] + "/avatars";
          var username = data['id']['username'];
