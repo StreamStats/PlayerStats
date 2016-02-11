@@ -9,10 +9,20 @@ $(document).ready(function(event){
    });
 });
 function getData(){
-    $.get('http://player.me/api/v1/users/' + $('#inputText').val() + "?username=true" , function(outer){
-         var data = outer.results
-         var avatar = "https://player.me/api/v1/users/" + data['id'] + "/avatars";
-         var username = data['id']['username'];
+      $.ajax({
+    url: 'http://player.me/api/v1/users/' + $('#inputText').val() + "?username=true",
+ 
+    // The name of the callback parameter, as specified by the YQL service
+    jsonp: "callback",
+ 
+    // Tell jQuery we're expecting JSONP
+    dataType: "jsonp",
+ 
+    // Work with the response
+    success: function( response ) {
+        var data = response.results
+         var avatar = data['avatar']['original'];
+         var username = data['username'];
          var followers = data['followers_count'];
          var joined = data['created_at'];
          var html = '<center><img src="' + avatar + '"width="100px" height="100px" style="border:3px solid white">';
@@ -21,5 +31,6 @@ function getData(){
 
          html += '<br><b>Joined on: </b>' + joined.replace('T', ' at ');
          $('.profile').html(html);
-      });
+    }
+    });
 }
